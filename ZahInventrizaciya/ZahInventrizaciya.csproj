@@ -1,0 +1,117 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resurses\add.png" />
+    <None Remove="Resurses\add1.png" />
+    <None Remove="Resurses\change.png" />
+    <None Remove="Resurses\delete.png" />
+    <None Remove="Resurses\info.png" />
+    <None Remove="Resurses\kab.png" />
+    <None Remove="Resurses\logout.png" />
+    <None Remove="Resurses\management_inventory_icon_216505.png" />
+    <None Remove="Resurses\ONT.png" />
+    <None Remove="Resurses\oProg.png" />
+    <None Remove="Resurses\predmetu.png" />
+    <None Remove="Resurses\prepod.png" />
+    <None Remove="Resurses\print.png" />
+    <None Remove="Resurses\usersgroup.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.18">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql" Version="7.0.6" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resurses\add.png" />
+    <Resource Include="Resurses\add1.png" />
+    <Resource Include="Resurses\change.png" />
+    <Resource Include="Resurses\delete.png" />
+    <Resource Include="Resurses\info.png" />
+    <Resource Include="Resurses\logout.png" />
+    <Resource Include="Resurses\ONT.png" />
+    <Resource Include="Resurses\prepod.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resurses\kab.png" />
+    <Resource Include="Resurses\management_inventory_icon_216505.png" />
+    <Resource Include="Resurses\oProg.png" />
+    <Resource Include="Resurses\predmetu.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resurses\print.png" />
+    <Resource Include="Resurses\usersgroup.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\InfoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\InventPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\KabTehPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\ListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MOLPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PrepodPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\InfoPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\InventPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\KabTehPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\ListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MOLPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PrepodPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>
