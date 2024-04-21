@@ -22,7 +22,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20,0">
-            <Button Name="AddBtn" Width="100" Margin="8" Click="AddTeacherBtn_OnClick">
+            <Button Name="AddBtn" Width="150" Height="40" Margin="8" Click="AddTeacherBtn_OnClick">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resurses/add1.png" Width="32"/>
@@ -30,7 +30,7 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
-            <Button Name="EditBtn" Width="100" Margin="8" Click="EditTeacherBtn_OnClick">
+            <Button Name="EditBtn" Width="150" Height="40" Margin="8" Click="EditTeacherBtn_OnClick">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resurses/change.png" Width="32"/>
@@ -38,7 +38,7 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
-            <Button Name="DelBtn" Width="100" Margin="8" Click="DelTeacherBtn_OnClick">
+            <Button Name="DelBtn"  Margin="8" Width="150" Height="40" Click="DelTeacherBtn_OnClick">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resurses/delete.png" Width="32" Height="32" />

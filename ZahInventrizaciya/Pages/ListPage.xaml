@@ -17,7 +17,7 @@
         <DataGrid Name="ItemsDataGrid" IsReadOnly="True" Grid.Row="0" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Дата выпуска"
-                                    Binding="{Binding Date, StringFormat= dd/MM/yyyy}" Width="100" />
+                                    Binding="{Binding Date, StringFormat= dd/MM/yyyy}" Width="120" />
                 
                 <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Инв. номер"
                                     Binding="{Binding InventoryNumber}" Width="150" />
@@ -26,14 +26,14 @@
                                     Binding="{Binding Name}" Width="*" />
                 
                 <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Количество"
-                                    Binding="{Binding Count}" Width="90" />
+                                    Binding="{Binding Count}" Width="110" />
             </DataGrid.Columns>
         </DataGrid>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20,0">
             <TextBox Name="SearchInvNumTBox" Grid.Row="1" Height="20" Width="100" TextChanged="TextBoxBase_OnTextChanged"/>
             
-            <Button Name="AddBtn" Width="100" Margin="8" Click="AddBtn_OnClick">
+            <Button Name="AddBtn" Width="150" Height="40" Margin="8" Click="AddBtn_OnClick">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resurses/add1.png" Width="32" />
@@ -42,7 +42,7 @@
                 </Button.Content>
             </Button>
             
-            <Button Name="EditBtn" Width="100" Margin="8" Click="EditBtn_OnClick">
+            <Button Name="EditBtn" Width="150" Height="40" Margin="8" Click="EditBtn_OnClick">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resurses/change.png" Width="32" />
@@ -51,7 +51,7 @@
                 </Button.Content>
             </Button>
             
-            <Button Name="DelBtn" Width="100" Margin="8" Click="DelBtn_OnClick">
+            <Button Name="DelBtn" Width="150" Height="40" Margin="8" Click="DelBtn_OnClick">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resurses/delete.png" Width="32" Height="32" />

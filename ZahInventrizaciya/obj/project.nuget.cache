@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NkcUQ5MyhQvBW5ThdcwSZtzM+RozrvLcGuWtAakYW1yUdgJgymx33K8L9VEG2M0M7KEfPSS40zmyZVMu9QNQRg==",
+  "dgSpecHash": "BY6NRwIJAuL8X8h7860fg5/u+Lgo/UQtL7J0vgc5GTS6cvPRqvF5ul5bU605fMrgGojp+3qHz6XpwWTRAJwZgA==",
   "success": true,
   "projectFilePath": "F:\\projects c#\\ZahInventrizaciya\\ZahInventrizaciya\\ZahInventrizaciya.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vorahaz\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Vorahaz\\.nuget\\packages\\materialdesigncolors\\3.0.0\\materialdesigncolors.3.0.0.nupkg.sha512",
+    "C:\\Users\\Vorahaz\\.nuget\\packages\\materialdesignthemes\\5.0.0\\materialdesignthemes.5.0.0.nupkg.sha512",
     "C:\\Users\\Vorahaz\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.18\\microsoft.entityframeworkcore.7.0.18.nupkg.sha512",
     "C:\\Users\\Vorahaz\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.18\\microsoft.entityframeworkcore.abstractions.7.0.18.nupkg.sha512",
     "C:\\Users\\Vorahaz\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.18\\microsoft.entityframeworkcore.analyzers.7.0.18.nupkg.sha512",
@@ -20,6 +22,7 @@
     "C:\\Users\\Vorahaz\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Vorahaz\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\Vorahaz\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\Vorahaz\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
     "C:\\Users\\Vorahaz\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Vorahaz\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
     "C:\\Users\\Vorahaz\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",

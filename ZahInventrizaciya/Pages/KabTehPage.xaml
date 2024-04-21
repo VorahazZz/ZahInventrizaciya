@@ -26,7 +26,7 @@
             </DataGrid>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                 <TextBox Width="100" Height="20" Margin="10,0,20,0"/>
-                <Button Name="BtnAddKab" Click="BtnAddKab_Click">
+                <Button Name="BtnAddKab" Width="150" Height="40" Click="BtnAddKab_Click">
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Resurses/add1.png" Width="32"/>
@@ -34,7 +34,7 @@
                         </StackPanel>
                     </Button.Content>
                 </Button>
-                <Button Name="BtnChangeKab" Click="BtnChangeKab_OnClick" Margin="5,0">
+                <Button Name="BtnChangeKab" Width="150" Height="40" Click="BtnChangeKab_OnClick" Margin="5,0">
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Resurses/change.png" Width="32"/>
@@ -42,7 +42,7 @@
                         </StackPanel>
                     </Button.Content>
                 </Button>
-                <Button Name="BtnDelKab" Click="BtnDelKab_OnClick" Margin="5,0">
+                <Button Name="BtnDelKab" Width="150" Height="40" Click="BtnDelKab_OnClick" Margin="5,0">
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Resurses/delete.png" Width="32" Height="32" />

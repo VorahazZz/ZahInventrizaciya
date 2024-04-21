@@ -35,10 +35,10 @@
             </Grid.ColumnDefinitions>
             <DataGrid Name="ObjDG" IsReadOnly="True" LoadingRow="ObjDG_LoadingRow" Grid.Column="0" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Дата выпуска" Binding="{Binding Item.Date}" Width="100"/>
+                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Дата выпуска" Binding="{Binding Item.Date}" Width="120"/>
                     <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Инв. номер" Binding="{Binding Item.InventoryNumber}" Width="150"/>
                     <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Предмет" Binding="{Binding Item.Name}" Width="*"/>
-                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Количество" Binding="{Binding Count}" Width="90"/>
+                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Количество" Binding="{Binding Count}" Width="110"/>
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Grid.Column="1">
