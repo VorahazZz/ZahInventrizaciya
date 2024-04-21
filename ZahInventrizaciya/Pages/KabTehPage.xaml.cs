@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ZahInventrizaciya.Entities;
+using ZahInventrizaciya.Windows;
 
 namespace ZahInventrizaciya
 {
@@ -20,14 +22,32 @@ namespace ZahInventrizaciya
     /// </summary>
     public partial class KabTehPage : Page
     {
+        private readonly ApplicationContext _db = new ApplicationContext();
         public KabTehPage()
         {
             InitializeComponent();
+            ClassroomsDataGrid.ItemsSource = _db.Classrooms.ToList();
         }
 
         private void BtnAddKab_Click(object sender, RoutedEventArgs e)
         {
+            new AddEditClassroom(null).ShowDialog();
+            Helpers.Refresher.RefreshTable(_db.Classrooms.ToList(),ClassroomsDataGrid);
+        }
 
+        private void BtnChangeKab_OnClick(object sender, RoutedEventArgs e)
+        {
+            Helpers.IsNullChecker.IsNullEdit<Classroom>(classroom =>
+            {
+                new AddEditClassroom(classroom).ShowDialog();
+            },ClassroomsDataGrid);
+            Helpers.Refresher.RefreshTable(_db.Classrooms.ToList(), ClassroomsDataGrid);
+        }
+
+        private void BtnDelKab_OnClick(object sender, RoutedEventArgs e)
+        {
+            Helpers.IsNullChecker.IsNullDel<Classroom>(ClassroomsDataGrid, _db);
+            Helpers.Refresher.RefreshTable(_db.Classrooms.ToList(),ClassroomsDataGrid);
         }
     }
 }
