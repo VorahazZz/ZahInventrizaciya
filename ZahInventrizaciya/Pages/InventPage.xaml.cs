@@ -36,7 +36,6 @@ namespace ZahInventrizaciya
         {
             var currentClassroom = (Classroom)KabDG.SelectedItem;
             var itemsList = _db.ItemsAndClassrooms.Include(x => x.Item).ToList();
-            //_db.ItemsAndClassrooms.Where(x => x.ClassroomId == currentClassroom.Id);
             ObjDG.ItemsSource = itemsList.Where(x => x.ClassroomId == currentClassroom.Id);
         }
         
@@ -55,7 +54,7 @@ namespace ZahInventrizaciya
         {
             new AddEditItemsAndClassrooms(null).ShowDialog();
             Helpers.Refresher.RefreshTable(_db.Classrooms.Include(x => x.MOL.Teacher).ToList(), KabDG);
-            Helpers.Refresher.RefreshTable(_db.ItemsAndClassrooms.ToList(), ObjDG);
+            DgFill();
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
@@ -65,13 +64,13 @@ namespace ZahInventrizaciya
                 new AddEditItemsAndClassrooms(itemsAndClassrooms).ShowDialog();
             }, ObjDG);
             Helpers.Refresher.RefreshTable(_db.Classrooms.Include(x => x.MOL.Teacher).ToList(), KabDG);
-            Helpers.Refresher.RefreshTable(_db.ItemsAndClassrooms.ToList(), ObjDG);
+            DgFill();
         }
 
         private void BtnDel_Click(object sender, RoutedEventArgs e)
         {
             Helpers.IsNullChecker.IsNullDel<ItemsAndClassrooms>(ObjDG, _db);
-            Helpers.Refresher.RefreshTable(_db.ItemsAndClassrooms.ToList(), ObjDG);
+            DgFill();
         }
 
         private void KabDG_SelectionChanged(object sender, SelectionChangedEventArgs e)

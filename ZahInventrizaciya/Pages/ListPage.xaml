@@ -14,7 +14,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="0.15*" />
         </Grid.RowDefinitions>
-        <DataGrid Name="ItemsDataGrid" Grid.Row="0" AutoGenerateColumns="False">
+        <DataGrid Name="ItemsDataGrid" IsReadOnly="True" Grid.Row="0" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Дата выпуска"
                                     Binding="{Binding Date, StringFormat= dd/MM/yyyy}" Width="100" />
