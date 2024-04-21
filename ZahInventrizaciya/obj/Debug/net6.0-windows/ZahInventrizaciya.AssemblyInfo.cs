@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZahInventrizaciya")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c32ba07cd8e473c8615c608a7f86531a077a3766")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ed6d610ef68570312dd90eac69402d8ad51ec74")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZahInventrizaciya")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZahInventrizaciya")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
