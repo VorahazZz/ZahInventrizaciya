@@ -96,3 +96,5 @@ F:\projects c#\ZahInventrizaciya\ZahInventrizaciya\obj\Debug\net6.0-windows\Wind
 F:\projects c#\ZahInventrizaciya\ZahInventrizaciya\obj\Debug\net6.0-windows\Windows\AddEditItem.baml
 F:\projects c#\ZahInventrizaciya\ZahInventrizaciya\obj\Debug\net6.0-windows\Windows\AddEditMOLWindow.baml
 F:\projects c#\ZahInventrizaciya\ZahInventrizaciya\obj\Debug\net6.0-windows\ZahInventrizaciya.sourcelink.json
+F:\projects c#\ZahInventrizaciya\ZahInventrizaciya\obj\Debug\net6.0-windows\Windows\AddEditClassroom.g.cs
+F:\projects c#\ZahInventrizaciya\ZahInventrizaciya\obj\Debug\net6.0-windows\Windows\AddEditClassroom.baml

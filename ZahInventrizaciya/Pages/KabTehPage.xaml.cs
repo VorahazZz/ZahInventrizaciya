@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 using ZahInventrizaciya.Entities;
 using ZahInventrizaciya.Windows;
 
@@ -26,7 +27,7 @@ namespace ZahInventrizaciya
         public KabTehPage()
         {
             InitializeComponent();
-            ClassroomsDataGrid.ItemsSource = _db.Classrooms.ToList();
+            ClassroomsDataGrid.ItemsSource = _db.Classrooms.Include(x => x.MOL.Teacher).ToList();
         }
 
         private void BtnAddKab_Click(object sender, RoutedEventArgs e)

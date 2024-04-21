@@ -10,15 +10,15 @@
 
     <Grid Background="White">
         <StackPanel>
-            <DataGrid Name="ClassroomsDataGrid" AutoGenerateColumns="False" Height="415">
+            <DataGrid Name="ClassroomsDataGrid" IsReadOnly="True" AutoGenerateColumns="False" Height="415">
                 <DataGrid.Columns>
                     <DataGridTextColumn CanUserResize="False" CanUserReorder="False" Header="Кабинет" Binding="{Binding PersonalNumber}" Width="100"/>
                     <DataGridTextColumn CanUserResize="False" CanUserReorder="False" Header="Название" Binding="{Binding Name}" Width="*"/>
                     <DataGridTextColumn CanUserResize="False" CanUserReorder="False" Header="Ответственный" Width="200">
                         <DataGridTextColumn.Binding>
                             <MultiBinding StringFormat="{}{0} {1}">
-                                <Binding Path="MOL.Firstname"></Binding>
-                                <Binding Path="MOL.Lastname"></Binding>
+                                <Binding Path="MOL.Teacher.Firstname"></Binding>
+                                <Binding Path="MOL.Teacher.Lastname"></Binding>
                             </MultiBinding>
                         </DataGridTextColumn.Binding>
                     </DataGridTextColumn>
