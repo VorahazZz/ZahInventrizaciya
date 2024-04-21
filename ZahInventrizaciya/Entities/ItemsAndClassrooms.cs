@@ -24,4 +24,8 @@ public class ItemsAndClassrooms
     /// Предмет
     /// </summary>
     public Item Item { get; set; } = null!;
+    /// <summary>
+    /// Кол-во предмета в этом кабинете
+    /// </summary>
+    public int Count { get; set; }
 }
