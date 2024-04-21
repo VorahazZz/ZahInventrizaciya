@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:ZahInventrizaciya"
+      xmlns:helpers="clr-namespace:ZahInventrizaciya.Helpers"
       mc:Ignorable="d"
       d:DesignHeight="480" d:DesignWidth="800"
       Title="ListPage">
@@ -13,17 +14,25 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="0.15*" />
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" AutoGenerateColumns="False">
+        <DataGrid Name="ItemsDataGrid" Grid.Row="0" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Дата выпуска" Width="100" />
-                <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Инв. номер" Width="150" />
-                <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Предмет" Binding="{Binding Name}" Width="*" />
-                <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Количество" Width="90" />
+                <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Дата выпуска"
+                                    Binding="{Binding Date, StringFormat= dd/MM/yyyy}" Width="100" />
+                
+                <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Инв. номер"
+                                    Binding="{Binding InventoryNumber}" Width="150" />
+                
+                <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Предмет"
+                                    Binding="{Binding Name}" Width="*" />
+                
+                <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Количество"
+                                    Binding="{Binding Count}" Width="90" />
             </DataGrid.Columns>
         </DataGrid>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20,0">
-            <TextBox Grid.Row="1" Height="20" Width="100" />
+            <TextBox Name="SearchInvNumTBox" Grid.Row="1" Height="20" Width="100" TextChanged="TextBoxBase_OnTextChanged"/>
+            
             <Button Name="AddBtn" Width="100" Margin="8" Click="AddBtn_OnClick">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
@@ -32,6 +41,7 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
+            
             <Button Name="EditBtn" Width="100" Margin="8" Click="EditBtn_OnClick">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
@@ -40,6 +50,7 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
+            
             <Button Name="DelBtn" Width="100" Margin="8" Click="DelBtn_OnClick">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">

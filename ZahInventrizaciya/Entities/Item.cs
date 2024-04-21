@@ -14,10 +14,11 @@ public class Item
     /// Дата выпуска
     /// </summary>
     public DateOnly Date { get; set; }
+
     /// <summary>
     /// Инвентаризационный номер
     /// </summary>
-    public ulong InventoryNumber { get; set; }
+    public string InventoryNumber { get; set; } = null!;
     /// <summary>
     /// Название предмета
     /// </summary>
