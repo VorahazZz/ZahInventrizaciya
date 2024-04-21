@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 using ZahInventrizaciya.Entities;
 using ZahInventrizaciya.Windows;
 
@@ -26,7 +27,7 @@ namespace ZahInventrizaciya
         public InventPage()
         {
             InitializeComponent();
-            KabDG.ItemsSource = _db.Classrooms.ToList();
+            KabDG.ItemsSource = _db.Classrooms.Include(x => x.MOL.Teacher).ToList();
             KabDG.SelectedIndex = 0;
             DgFill();
         }
@@ -34,7 +35,7 @@ namespace ZahInventrizaciya
         private void DgFill()
         {
             var currentClassroom = (Classroom)KabDG.SelectedItem;
-            var itemsList = _db.ItemsAndClassrooms.ToList();
+            var itemsList = _db.ItemsAndClassrooms.Include(x => x.Item).ToList();
             //_db.ItemsAndClassrooms.Where(x => x.ClassroomId == currentClassroom.Id);
             ObjDG.ItemsSource = itemsList.Where(x => x.ClassroomId == currentClassroom.Id);
         }
@@ -53,8 +54,8 @@ namespace ZahInventrizaciya
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             new AddEditItemsAndClassrooms(null).ShowDialog();
-            Helpers.Refresher.RefreshTable(_db.Classrooms.ToList(), KabDG);
-            Helpers.Refresher.RefreshTable(_db.Items.ToList(), ObjDG);
+            Helpers.Refresher.RefreshTable(_db.Classrooms.Include(x => x.MOL.Teacher).ToList(), KabDG);
+            Helpers.Refresher.RefreshTable(_db.ItemsAndClassrooms.ToList(), ObjDG);
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
@@ -63,14 +64,14 @@ namespace ZahInventrizaciya
             {
                 new AddEditItemsAndClassrooms(itemsAndClassrooms).ShowDialog();
             }, ObjDG);
-            Helpers.Refresher.RefreshTable(_db.Classrooms.ToList(), KabDG);
-            Helpers.Refresher.RefreshTable(_db.Items.ToList(), ObjDG);
+            Helpers.Refresher.RefreshTable(_db.Classrooms.Include(x => x.MOL.Teacher).ToList(), KabDG);
+            Helpers.Refresher.RefreshTable(_db.ItemsAndClassrooms.ToList(), ObjDG);
         }
 
         private void BtnDel_Click(object sender, RoutedEventArgs e)
         {
-            Helpers.IsNullChecker.IsNullDel<Item>(ObjDG, _db);
-            Helpers.Refresher.RefreshTable(_db.Items.ToList(), ObjDG);
+            Helpers.IsNullChecker.IsNullDel<ItemsAndClassrooms>(ObjDG, _db);
+            Helpers.Refresher.RefreshTable(_db.ItemsAndClassrooms.ToList(), ObjDG);
         }
 
         private void KabDG_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -21,8 +21,8 @@
                 <DataGridTextColumn CanUserResize="False" CanUserReorder="False" Header="Ответственный" Width="200">
                     <DataGridTextColumn.Binding>
                         <MultiBinding StringFormat="{}{0} {1}">
-                            <Binding Path="MOL.Firstname"/>
-                            <Binding Path="MOL.Lastname"/>
+                            <Binding Path="MOL.Teacher.Firstname"/>
+                            <Binding Path="MOL.Teacher.Lastname"/>
                         </MultiBinding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>

@@ -23,8 +23,8 @@
                 <Label Content="Кабинет" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                 <Label Content="Предмет" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                 <Label Content="Количество (в этом кабинете)" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                <ComboBox Name="KabComBox" Width="150" Grid.Column="1" Grid.Row="0" Margin="10" SelectedItem="{Binding Classrooms}" DisplayMemberPath="Name"/>
-                <ComboBox Name="ObjComBox" Width="150" Grid.Column="1" Grid.Row="1" Margin="10" SelectedItem="{Binding Items}" DisplayMemberPath="Name"/>
+                <ComboBox Name="KabComBox" Width="150" Grid.Column="1" Grid.Row="0" Margin="10" SelectedItem="{Binding Classroom}" DisplayMemberPath="Name"/>
+                <ComboBox Name="ObjComBox" Width="150" Grid.Column="1" Grid.Row="1" Margin="10" SelectedItem="{Binding Item}" DisplayMemberPath="Name"/>
                 <TextBox Name="KolVoTbox" Width="150" Grid.Column="1" Grid.Row="2" Margin="10" Text="{Binding Count}"/>
                 <Button Name="BackBtn" Content="Отмена" Grid.Column="0" Grid.Row="4" Width="100" Margin="10" Click="BackBtn_Click"/>
                 <Button Name="AddBtn" Content="Добавить" Grid.Column="1" Grid.Row="4" Width="100" Margin="10" Click="AddBtn_Click"/>
