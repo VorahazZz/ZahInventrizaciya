@@ -11,28 +11,50 @@ public abstract class IsNullChecker
     
     public static void IsNullEdit<T>(ShowEditWindowDelegate<T> showEditWindowDelegate, DataGrid dataGrid)
     {
-        if (dataGrid.SelectedItem is T obj)
-            showEditWindowDelegate(obj);
-        else
+        try
+        {
+            if (dataGrid.SelectedItem is T obj)
+                showEditWindowDelegate(obj);
+            else
+                MessageBox.Show(
+                    "Выберите для редактирования объект из таблицы",
+                    "Редактирование",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+        }
+        catch (Exception e)
+        {
             MessageBox.Show(
-                "Выберите для редактирования объект из таблицы",
-                "Редактирование",
+                "Неизвестная ошибка. Перезапустите программу. Если ошибка повторится, то обратитесь к разработчику",
+                "Неизвестная ошибка",
                 MessageBoxButton.OK,
-                MessageBoxImage.Warning);
+                MessageBoxImage.Error);
+        }
     }
 
-    public static async void IsNullDel<T>(DataGrid dataGrid, ApplicationContext db)
+    public static void IsNullDel<T>(DataGrid dataGrid, ApplicationContext db)
     {
-        if (dataGrid.SelectedItem is T obj)
+        try
         {
-            db.Remove(obj);
-            await db.SaveChangesAsync();
+            if (dataGrid.SelectedItem is T obj)
+            {
+                db.Remove(obj);
+                db.SaveChanges();
+            }
+            else
+                MessageBox.Show(
+                    "Выберите для удаленияя объект из таблицы",
+                    "Удаление",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
         }
-        else
+        catch (Exception e)
+        {
             MessageBox.Show(
-                "Выберите для удаленияя объект из таблицы",
-                "Удаление",
+                "Неизвестная ошибка. Перезапустите программу. Если ошибка повторится, то обратитесь к разработчику",
+                "Неизвестная ошибка",
                 MessageBoxButton.OK,
-                MessageBoxImage.Warning);
+                MessageBoxImage.Error);
+        }
     }
 }

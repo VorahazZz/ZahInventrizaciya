@@ -6,58 +6,58 @@
       xmlns:local="clr-namespace:ZahInventrizaciya"
       mc:Ignorable="d" 
       d:DesignHeight="480" d:DesignWidth="800"
-      Title="InventPage">
+      Title="InventPage"
+      Loaded="InventPage_OnLoaded">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="170"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="220"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" AutoGenerateColumns="False">
+        <DataGrid Name="KabDG" Grid.Row="0" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" LoadingRow="KabDG_LoadingRow" SelectionChanged="KabDG_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn CanUserResize="False" CanUserReorder="False" Header="Кабинет" Width="100"/>
-                <DataGridTextColumn CanUserResize="False" CanUserReorder="False" Header="Название" Width="*"/>
-                <DataGridTextColumn CanUserResize="False" CanUserReorder="False" Header="Ответственный" Width="200"/>
+                <DataGridTextColumn CanUserResize="False" CanUserReorder="False" Header="Кабинет" Binding="{Binding PersonalNumber}" Width="100"/>
+                <DataGridTextColumn CanUserResize="False" CanUserReorder="False" Header="Название" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn CanUserResize="False" CanUserReorder="False" Header="Ответственный" Width="200">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1}">
+                            <Binding Path="MOL.Teacher.Firstname"/>
+                            <Binding Path="MOL.Teacher.Lastname"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox Grid.Row="1" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Width="70" Margin="10,0"/>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="64"/>
             </Grid.ColumnDefinitions>
-            <DataGrid Grid.Column="0" AutoGenerateColumns="False">
+            <DataGrid Name="ObjDG" IsReadOnly="True" LoadingRow="ObjDG_LoadingRow" Grid.Column="0" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Дата выпуска" Width="100"/>
-                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Инв. номер" Width="150"/>
-                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Предмет" Width="*"/>
-                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Количество" Width="90"/>
+                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Дата выпуска" Binding="{Binding Item.Date}" Width="100"/>
+                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Инв. номер" Binding="{Binding Item.InventoryNumber}" Width="150"/>
+                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Предмет" Binding="{Binding Item.Name}" Width="*"/>
+                    <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Header="Количество" Binding="{Binding Count}" Width="90"/>
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Grid.Column="1">
-                <Button Name="BtnAdd" Height="65">
+                <Button Name="BtnAdd" Height="86" Click="BtnAdd_Click">
                     <Button.Content>
                         <Image Source="/Resurses/add1.png" Width="32"/>
                     </Button.Content>
                 </Button>
-                <Button Name="BtnEdit" Height="65">
+                <Button Name="BtnEdit" Height="86" Click="BtnEdit_Click">
                     <Button.Content>
                         <Image Source="/Resurses/change.png" Width="32"/>
                     </Button.Content>
                 </Button>
-                <Button Name="BtnDel" Height="65">
+                <Button Name="BtnDel" Height="87" Click="BtnDel_Click">
                     <Button.Content>
                         <Image Source="/Resurses/delete.png" Width="32"/>
                     </Button.Content>
                 </Button>
-                <Button Name="BtnPrint" Height="65">
-                    <Button.Content>
-                        <Image Source="/Resurses/print.png" Width="32"/>
-                    </Button.Content>
-                </Button>
             </StackPanel>
         </Grid>
-        
     </Grid>
 </Page>
